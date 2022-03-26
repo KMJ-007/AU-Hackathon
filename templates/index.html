@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Predictor</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+
+}
+:root{
+    --pColor: #307AAC;
+    --sColor: #1c6392;
+    --utilColor: #F00; /*---To be Changed */
+    font-size: 62.5%;
+}
+
+body::-webkit-scrollbar {
+    width: 1rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    border-left: 0;
+    border-right: 0;
+    background-color: #307AAC;
+  }
+  
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--pColor);
+    padding: 2rem;
+}
+nav a{
+    text-decoration: none;
+    font-size: 2.6rem;
+    color: white;
+    font-weight: 600;
+}
+/*              ---Instructions ------- */
+.instruction{
+    font-size: 1.8rem;
+    margin: 1.6rem 0 0 0;
+    color: var(--utilColor);
+    padding: .5rem 0 .5rem 2rem;
+}   
+
+/*                 ----- Form -----                */
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+    padding: 2rem;
+    margin: 1rem 0 0 0 ;
+  }
+form .materialInfo{
+    border: none;
+    border-bottom: 2px solid gray;
+    padding: 1rem;
+    width: 100%;
+    font-size: 2rem;
+    margin: .5rem 0 0 0;
+  }
+form .materialInfo:focus{
+    outline-width: 0;
+  }
+  
+    form .uploadContainer{
+    border-radius: 2.5rem;
+    box-shadow: 0 6px 10px #0000002e;
+    margin: 2rem 0 0 0 ;
+  }
+  
+  
+    form .uploadContainer .dropzone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50rem;
+    min-height: 20rem;
+    border: 2px dashed var(--pColor);
+    margin: 3rem;
+    border-radius: 1rem;
+    transition: all .2s ease-in-out;
+  }
+    form .uploadContainer .dragged.dropzone{
+    background-color: #eff5fe;
+  }
+  
+  #inputFile{
+    display: none;
+  }
+  .d-none{
+    display: none;
+  }
+    form .uploadContainer .dropzone .icon-container{
+    width: 7.5rem;
+    position: relative;
+    height: 8rem;
+  }
+    form .uploadContainer .dropzone .icon-container .center{
+    z-index: 2;
+  }
+    form .uploadContainer .dropzone.dragged .icon-container .center{
+    transform: translateY(-0.2rem);
+  }
+    form .uploadContainer .dropzone.dragged .icon-container .right{
+    transform: rotate(15deg) translate(2rem) scale(.9);
+    filter: grayscale(.5);
+  }
+    form .uploadContainer .dropzone.dragged .icon-container .left{
+    transform: rotate(-15deg) translate(-2rem) scale(.9);
+    filter: grayscale(.5);
+  }
+    form .uploadContainer .dropzone .icon-container img{
+    width: 7rem;
+    position: absolute;
+    transition: transform 250ms ease-in-out;
+  }
+    form .uploadContainer .dropzone .dropFiles{
+    font-size: 1.8rem;
+    margin: 1rem 0 0 0;
+    color: #000;
+  }
+    form .uploadContainer .dropzone .dropFiles .browseBtn{
+    color: rgb(43, 109, 196);
+    cursor: pointer;
+  }
+    form .uploadContainer .dropzone .fileDropped p{
+    font-size: 1.7rem;
+    color: rgb(49, 49, 194);
+  }
+  .btnSubmit{
+    display: flex;
+    /* border: 1px solid red; */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* padding-right: 2rem; */
+    margin: 2rem 0 0 0;
+  }
+  .btnSubmit input{
+    padding: .8rem 1.8rem;
+    /* margin-bottom: 2rem; */
+    border-radius: .9rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: var(--pColor);
+    color: white;
+  }
+  .btnSubmit input:hover{
+    background-color: var(--sColor);
+  }
+
+  /*  ------HEader-------- */
+  header{
+      font-size: 2.7rem;
+      color: var(--pColor);
+      margin: 2rem 0 0 2rem;
+
+  }
+   ul{
+      /* list-style: none; */
+      font-size: 1.8rem;
+      margin: 1rem 0 0 4rem;
+  }
+   ul li {
+    margin: .5rem 0 0 0;
+  }
+  
+.crossBtn::after{
+    content: 'X';
+    font-weight: bold;
+    display: inline-block;
+    transform: scale(1.2);
+    margin: 0 0 0 .5rem;
+    font-size: 1.2rem;
+  }
+	</style>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <a href="#">Covid Predictor</a>
+    </nav>
+    <div class="wrapper">
+        <div>
+            <div class="instruction">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, necessitatibus minima modi laudantium
+                in
+                repudiandae nihil qui labore itaque illum expedita nostrum dolorem. Nulla doloribus obcaecati ab dolore
+                culpa animi!
+            </div>
+            <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+
+                <section class="uploadContainer">
+                    <div class="dropzone">
+                        <div class="icon-container">
+
+                            <img src="../Images/file.svg" class="center" draggable="false" alt="File Icon">
+                            <img src="../Images/file.svg" class="left" draggable="false" alt="File Icon">
+                            <img src="../Images/file.svg" class="right" draggable="false" alt="File Icon">
+
+                        </div>
+						<div class="file-input">
+
+							<input type="file" name="file" accept="image/*" multiple >
+							<div class="dropFiles">
+								Drop Your Files Here or,
+								<span class="browseBtn"> Browse</span>
+							</div>
+						</div>
+                    </div>
+                </section>
+
+                <div class="btnSubmit">
+                    <input type="submit" value="Upload">
+                </div>
+            </form>
+
+            <div class="instruction">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, necessitatibus minima modi laudantium
+                in
+                repudiandae nihil qui labore itaque illum expedita nostrum dolorem. Nulla doloribus obcaecati ab dolore
+                culpa animi!
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <header>
+            <h3>
+                About us
+            </h3>
+        </header>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
+                dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
+                dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
+                dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
+                dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
+                dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+        </ul>
+    </div>
+    <div class="wrapper">
+        <header>
+            <h3>
+                Contact us
+            </h3>
+        </header>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
+                dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
+                dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
+                dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
+                dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
+                dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+        </ul>
+    </div>
+</body>
+<script>
+	var inputs = document.querySelectorAll('.file-input');
+
+for (var i = 0, len = inputs.length; i < len; i++) {
+	customInput(inputs[i]);
+}
+
+function customInput(el) {
+	const fileInput = el.querySelector('[type="file"]');
+	const label = el.querySelector('[data-js-label]');
+
+	fileInput.onmouseout = function() {
+		if (!fileInput.value) return;
+
+		var value = fileInput.value.replace(/^.*[\\\/]/, '');
+		el.className += ' -chosen';
+		label.innerText = value;
+	};
+}
+// drag and drop
+const dropFiles = document.querySelector('.dropFiles');
+const filePath = document.querySelector('#filePath');
+const fileDropped = document.querySelector('.fileDropped')
+// console.log(fileDropped);
+// console.log(filePath.innerText);
+// console.log(dropFiles);
+const dropZone = document.querySelector('.dropzone');
+dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    if (!dropZone.classList.contains('dragged')) {
+        dropZone.classList.add('dragged')
+        console.log('dragging over element');
+    }
+})
+
+dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('dragged');
+})
+
+const fileInput = document.querySelector('#inputFile');
+
+
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    ondDrop(e);
+
+    dropZone.classList.remove('dragged');
+    dropFiles.classList.add('d-none');
+    fileDropped.classList.remove('d-none');
+    filePath.innerText = `${e.dataTransfer.files[0].name}`;
+
+    const crossBtn = document.createElement('span');
+    crossBtn.classList.add('crossBtn');
+    filePath.appendChild(crossBtn)
+
+    crossBtn.addEventListener('click', () => {
+        console.log('cross Clicked');
+        dropFiles.classList.remove('d-none');
+        fileDropped.classList.add('d-none');
+        fileInput.value = '';
+    })
+
+})
+
+
+const browseBtn = document.querySelector('.browseBtn');
+
+browseBtn.addEventListener('click', () => {
+    fileInput.click();
+})
+
+document.getElementById('inputFile').onchange = function (e) {
+    e.preventDefault();
+    console.log(e.target.files[0].name);
+    filePath.innerText = `${e.target.files[0].name}`;
+
+    const crossBtn = document.createElement('span');
+    crossBtn.classList.add('crossBtn');
+    filePath.appendChild(crossBtn);
+
+    fileDropped.classList.remove('d-none');
+    dropFiles.classList.add('d-none');
+
+    crossBtn.addEventListener('click', () => {
+        console.log('cross Clicked');
+        dropFiles.classList.remove('d-none');
+        fileDropped.classList.add('d-none');
+        fileInput.value = '';
+    })
+};
+
+// MIRACLE MIRACLE MIRACLE MIRACLE
+// MOJ KAR DI BETE 
+// YAHA WAHA SAARE JAHA ME TERA RAAJ HAI JIJA JI...
+
+function ondDrop(e) {
+    fileInput.files = e.dataTransfer.files;
+    const event = new Event('change', { bubbles: true });
+    fileInput.dispatchEvent(event);
+}
+
+</script>
+
+</html>

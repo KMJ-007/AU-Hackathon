@@ -6,14 +6,14 @@ from keras.preprocessing import image
 from keras.models import load_model
     
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='templates')
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # for main route, serve index.html file from frontend
 @app.route("/")
 def index():
-    return render_template("APP_ROOT/frontend/src/index.html")
+    return render_template("index.html")
 
 # route for uploaing the image
 @app.route("/upload", methods=["POST"])
