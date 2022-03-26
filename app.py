@@ -51,7 +51,7 @@ def upload():
         else:
             prediction = 'Patient is Healthy'
 
-    return render_template("template.html",image_name=filename, text=prediction)
+    return render_template("result.html",image_name=filename, text=prediction)
 
 # route for upload
 @app.route('/upload/<filename>')
