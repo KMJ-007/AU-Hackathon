@@ -61,10 +61,12 @@
 
     /*              ---Instructions ------- */
     .instruction {
-      font-size: 1.8rem;
+      font-size: 2.6rem;
       margin: 1.6rem 0 0 0;
-      color: var(--utilColor);
+      color: var(--pColor);
+      font-weight: 500;
       padding: .5rem 0 .5rem 2rem;
+
     }
 
     /*                 ----- Form -----                */
@@ -73,10 +75,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      /* justify-content: space-between; */
       padding: 2rem;
-      margin: 10rem 0 0 0;
+      /* margin: 10rem 0 0 0; */
 
+    }
+
+    form .wrapperContainer {
+      display: flex;
+      gap: 20rem;
+    }
+
+    form .wrapperContainer img {
+      width: 50rem;
     }
 
     form .materialInfo {
@@ -107,7 +118,7 @@
       justify-content: center;
       flex-direction: column;
       width: 50rem;
-      min-height: 20rem;
+      min-height: 27rem;
       border: 2px dashed var(--pColor);
       margin: 3rem;
       border-radius: 1rem;
@@ -176,7 +187,7 @@
       display: flex;
       width: 100%;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       margin: 2rem 0 0 0;
     }
 
@@ -189,6 +200,7 @@
       border: 1px solid black;
       background-color: var(--pColor);
       color: white;
+      margin: 0 33rem 0 0;
     }
 
     .btnSubmit input:hover {
@@ -199,18 +211,21 @@
     header {
       font-size: 2.7rem;
       color: var(--pColor);
-      margin: 2rem 0 0 2rem;
+      margin: 6rem 0 0 2rem;
 
     }
 
     ul {
-      /* list-style: none; */
+      list-style: none;
       font-size: 1.8rem;
       margin: 1rem 0 0 4rem;
+      text-align: center;
     }
 
     ul li {
-      margin: .5rem 0 0 0;
+      margin: 1rem 0 .3rem 0;
+      /* font-weight: 500; */
+      font-size: 2rem;
     }
 
     .crossBtn::after {
@@ -269,7 +284,8 @@
       text-decoration: none;
       color: black;
     }
-	.footer {
+
+    .footer {
       width: 100%;
       background-color: black;
       padding: 2rem;
@@ -292,28 +308,29 @@
         COVID-19 detection from X-ray scans of the chest using CNN
       </div>
       <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+        <div class="wrapperContainer">
+          <!-- <img src="{{url_for('static',filename = 'undraw_medicine_b-1-ol.svg')}}" alt=""> -->
+          <img src="../Static/undraw_medicine_b-1-ol.svg" alt="">
 
-        <section class="uploadContainer">
-          <div class="dropzone">
-            <div class="icon-container">
-
-              <img src="{{url_for('static',filename = 'file.svg')}}" class="center" draggable="false" alt="File Icon">
-
-            </div>
-            <div class="file-input">
-
-              <input type="file" id="inputFile" name="file" accept="image/*" multiple>
-              <div class="dropFiles">
-                Drop Your Files Here or,
-                <span class="browseBtn"> Browse</span>
+          <section class="uploadContainer">
+            <div class="dropzone">
+              <div class="icon-container">
+                <img src="{{url_for('static',filename = 'file.svg')}}" class="center" draggable="false" alt="File Icon">
+              </div>
+              <div class="file-input">
+                <input type="file" id="inputFile" name="file" accept="image/*" multiple>
+                <div class="dropFiles">
+                  Drop Your Files Here or,
+                  <span class="browseBtn"> Browse</span>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-
+          </section>
+        </div>
         <div class="btnSubmit">
           <input type="submit" value="Upload">
         </div>
+
       </form>
 
     </div>
@@ -325,51 +342,64 @@
       </h3>
     </header>
     <ul>
-		COVID-19 is the infectious disease caused by the most recently
-		discovered corona virus. 
-		This new virus and disease were unknown
-		before the outbreak began in Wuhan, China, in December 2019.
-		
+      <li>
+        COVID-19 is the infectious disease caused by the most recently
+        discovered corona virus.
+      </li>
+      <li>
+        This new virus and disease were unknown
+        before the outbreak began in Wuhan, China, in December 2019.
+      </li>
+
     </ul>
   </div>
   <header>
-      <h3 class="center">
-        What are the symptoms of COVID-19?
-      </h3>
-    </header>
-    <ul>The most common symptoms of COVID-19 are fever, tiredness, and
-		dry cough. Some patients may have aches and pains, nasal
-		congestion, runny nose, sore throat or diarrhea. These symptoms are
-		usually mild and begin gradually. 
-    </ul>
+    <h3 class="center">
+      What are the symptoms of COVID-19?
+    </h3>
+  </header>
+  <ul>
+    <li>
+      The most common symptoms of COVID-19 are fever, tiredness, and
+      dry cough,
+    </li>
+    <li>
+      aches and pains, nasal
+      congestion, runny nose, sore throat or diarrhea.
+    </li>
+    <li>
+      These symptoms are
+      usually mild and begin gradually.
+    </li>
+  </ul>
   </div>
   <div class="wrapper">
-    <header class="center">
+    <header class="center" style="margin: 5rem 0 2rem 0;">
       <h3>
         Team Members
       </h3>
     </header>
-	<!-- team members cards -->
+    <!-- team members cards -->
     <div class="cardContainer">
-		<div class="card">
-		  <img  src="{{url_for('static',filename = 'mohit.jpg')}}" alt="Photo">
-		  <p>Mohit Patel</p>
-		  <div class="iconContainer">
-			<a href="https://github.com/MohitPatel1">
-			  <i class="fa fa-github" aria-hidden="true"></i>
-			</a>
-			<a href="https://www.linkedin.com/in/mohit-patel-2729a1225/">
-			  <i class="fa fa-linkedin" aria-hidden="true"></i>
-			</a>
-			<a href="mailto:mohit.patel1966@gmail.com">
-			  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-			</a>
-		  </div>
-		</div>
-	   
+      <div class="card">
+        <img src="{{url_for('static',filename = 'mohit.jpg')}}" alt="Photo">
+        <p>Mohit Patel</p>
+        <div class="iconContainer">
+          <a href="https://github.com/MohitPatel1">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mohit-patel-2729a1225/">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:mohit.patel1966@gmail.com">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
 
       <div class="card">
-        <img  src="{{url_for('static',filename = 'karan.jpg')}}" alt="Photo">
+        <img src="{{url_for('static',filename = 'karan.jpg')}}" alt="Photo">
         <p>Karan Janthe</p>
         <div class="iconContainer">
           <a href="https://github.com/KMJ-007">
@@ -383,8 +413,8 @@
           </a>
         </div>
       </div>
-     
-     
+
+
       <div class="card">
         <img src="{{url_for('static',filename = 'nisu.jpg')}}" alt="Photo">
         <p>Nisrag Jaiswal</p>
@@ -400,10 +430,10 @@
           </a>
         </div>
       </div>
-     
+
     </div>
   </div>
-  
+
   <div class="footer">
     Made with ❤️ by Team Mokey for INGENIUM
   </div>

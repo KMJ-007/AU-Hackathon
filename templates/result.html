@@ -52,8 +52,9 @@
     }
 
     .wrapper p {
-      font-size: 1.8rem;
+      font-size: 3rem;
       margin: 1rem 0 0 0;
+      font-weight: 600;
     }
 
     .wrapper {
@@ -94,40 +95,12 @@
       color: green;
     }
 
-    /* * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        background: #334d50;
-        height: 100vh;
-        background: linear-gradient(to top, #cbcaa5, #334d50);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        flex-direction: column;
-      }
-      h2 {
-        padding: 20px;
-      }
-      p{
-        padding: 20px;
-      }
-      input {
-        margin: 10px;
-      }
-      .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      img {
-        height: auto;
-        width: 200px;
-      } */
+    #resultUl {
+      font-size: 1.9rem;
+      list-style: none;
+      margin: 1.5rem 0 0 0;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -135,15 +108,20 @@
   <nav>
     <a href="#">Covid Predictor</a>
   </nav>
-    <div class="wrapper">
-      <div class="container">
-        <h3>
-          Uploaded Image:
-        </h3>
-        <img src=" {{url_for('send_image', filename=image_name)}}" />
+  <div class="wrapper">
+    <div class="container">
+      <h3>
+        Uploaded Image:
+      </h3>
+      <img src=" {{url_for('send_image', filename=image_name)}}" />
+      <!-- <img src="../images/1-s2.0-S0929664620300449-gr2_lrg-c.jpg" alt=""> -->
     </div>
-    <p>
+    <p id="result">
       {{text}}
+
+    <ul id="resultUl">
+      <!-- <li>Hello</li> -->
+    </ul>
     </p>
   </div>
   <div class="footer">
@@ -151,5 +129,20 @@
   </div>
 
 </body>
+
+<script>
+  const res = document.getElementById('result');
+  const ul = document.getElementById('resultUl');
+  console.log(ul)
+  if (res.innerText == "Patient is affected with Corona") {
+    ul.innerHTML = "<li>first of all stay calm, </li><li>isolate yourself</li> <li>seek medication as soon as possible.</li>"
+    res.classList.add('red')
+  }
+  else {
+    ul.innerHTML = "<li>Wear a mask.</li><li>Clean your hands with senetizer</li><li>Maintain safe distance.</li>"
+    res.classList.add('green')
+  }
+
+</script>
 
 </html>
