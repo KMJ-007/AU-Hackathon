@@ -39,7 +39,7 @@ def upload():
         from keras.preprocessing import image
 
         from keras.models import load_model
-        new_model = load_model('model1.h5')
+        new_model = load_model('covidPredict.h5')
         new_model.summary()
         test_image = image.load_img('images\\'+filename,target_size=(64,64))
         test_image = image.img_to_array(test_image)

@@ -203,13 +203,11 @@ form .materialInfo:focus{
     <nav>
         <a href="#">Covid Predictor</a>
     </nav>
+	<!-- short description -->
     <div class="wrapper">
         <div>
             <div class="instruction">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, necessitatibus minima modi laudantium
-                in
-                repudiandae nihil qui labore itaque illum expedita nostrum dolorem. Nulla doloribus obcaecati ab dolore
-                culpa animi!
+                COVID-19 detection from X-ray scans of the chest using CNN
             </div>
             <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
 
@@ -224,7 +222,7 @@ form .materialInfo:focus{
                         </div>
 						<div class="file-input">
 
-							<input type="file" name="file" accept="image/*" multiple >
+							<input id-"input-file" type="file" name="file" accept="image/*" multiple >
 							<div class="dropFiles">
 								Drop Your Files Here or,
 								<span class="browseBtn"> Browse</span>
@@ -238,18 +236,12 @@ form .materialInfo:focus{
                 </div>
             </form>
 
-            <div class="instruction">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, necessitatibus minima modi laudantium
-                in
-                repudiandae nihil qui labore itaque illum expedita nostrum dolorem. Nulla doloribus obcaecati ab dolore
-                culpa animi!
-            </div>
         </div>
     </div>
     <div class="wrapper">
         <header>
             <h3>
-                About us
+                What is covid19 prediction?
             </h3>
         </header>
         <ul>
