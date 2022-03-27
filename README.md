@@ -1,4 +1,4 @@
-# project Name
+# Covid Prediction
 
 ## COVID-19 detection from X-ray scans of the chest using CNN
 ---
@@ -71,3 +71,9 @@ python app.py
 - ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
   
   <!-- demo video/images of projects -->
+
+  ## Team Name: Mokey
+
+- [Karan Janthe](mailto:karanjanthe@gmail.com)
+- [Mohit Patel](mailto:mohit.patel1966@gmail.com)
+- [Nisrag Jaiswal](mailto:nisujaiswal4@gmail.com)
