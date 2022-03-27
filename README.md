@@ -1,9 +1,9 @@
-# project Name
+# Covid Prediction
 
 ## COVID-19 detection from X-ray scans of the chest using CNN
 ---
 
-## little about project
+## about project
 
 <br/>
 
@@ -24,7 +24,7 @@ usually mild and begin gradually.
 
 <br/>
 
-## 🚨🚨🚨 Please do not claim diagnostic performance of a model in the absence of a clinical study! 🚨🚨🚨
+## <strong> Note: Please do not claim diagnostic performance of a model in the absence of a clinical study!  </strong>
 
 # Getting Started
 
@@ -60,6 +60,8 @@ style.js
 ```python
 python app.py
 ```
+## What challenges we faced in building project?
+- Dataset for chest x-ray's were not available, and we wanted to find the specific covid inflected chest X-ray, and Non-covid x-ray, this was the biggest challenges we had, for solution we combined different dataset for making our own dataset.
 
 ## Technologies
 - ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
@@ -69,3 +71,9 @@ python app.py
 - ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
   
   <!-- demo video/images of projects -->
+
+  ## Team Name: Mokey
+
+- [Karan Janthe](mailto:karanjanthe@gmail.com)
+- [Mohit Patel](mailto:mohit.patel1966@gmail.com)
+- [Nisrag Jaiswal](mailto:nisujaiswal4@gmail.com)

@@ -1,0 +1,8 @@
+first highligted line on 1st page:-
+COVID-19 detection from X-ray scans of the chest using CNN
+
+caution on the first page
+Note: Please do not claim diagnostic performance of a model in the absence of a clinical study!
+
+
+
