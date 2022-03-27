@@ -1,0 +1,6 @@
+first highligted line on 1st page:-
+COVID-19 detection from X-ray scans of the chest using CNN
+
+
+
+
