@@ -24,7 +24,7 @@ usually mild and begin gradually.
 
 <br/>
 
-## 🚨🚨🚨 Please do not claim diagnostic performance of a model in the absence of a clinical study! 🚨🚨🚨
+## <strong> Note: Please do not claim diagnostic performance of a model in the absence of a clinical study!  </strong>
 
 # Getting Started
 
