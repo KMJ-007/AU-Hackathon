@@ -5,6 +5,95 @@
   <meta charset="UTF-8" />
   <title>COVID19</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'PT Sans', sans-serif;
+
+    }
+
+    :root {
+      --pColor: #307AAC;
+      --sColor: #1c6392;
+      --utilColor: #F00;
+      /*---To be Changed */
+      font-size: 62.5%;
+    }
+
+    body::-webkit-scrollbar {
+      width: 1rem;
+    }
+
+    body::-webkit-scrollbar-track {
+      background-color: #e4e4e4;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      border-left: 0;
+      border-right: 0;
+      background-color: #307AAC;
+    }
+
+    nav {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--pColor);
+      padding: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 2.6rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    .wrapper p {
+      font-size: 1.8rem;
+      margin: 1rem 0 0 0;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 81vh;
+    }
+
+    .wrapper h3 {
+      color: var(--pColor);
+      font-size: 2.4rem;
+    }
+
+    .wrapper img {
+      width: 36rem;
+      border-radius: .67rem;
+      margin: 1rem 0 0 0;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: black;
+      padding: 2rem;
+      text-align: center;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .green {
+      color: green;
+    }
+
     /* * {
         margin: 0;
         padding: 0;
@@ -43,11 +132,23 @@
 </head>
 
 <body>
-  <!-- <p>
-    Uploaded Image:
+  <nav>
+    <a href="#">Covid Predictor</a>
+  </nav>
+    <div class="wrapper">
+      <div class="container">
+        <h3>
+          Uploaded Image:
+        </h3>
+        <img src=" {{url_for('send_image', filename=image_name)}}" />
+    </div>
+    <p>
+      {{text}}
     </p>
-    <img src=" {{url_for('send_image', filename=image_name)}}" />
-    <h2>{{text}}</h2> -->
+  </div>
+  <div class="footer">
+    Made with ❤️ by Team Mokey for INGENIUM
+  </div>
 
 </body>
 

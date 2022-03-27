@@ -231,22 +231,6 @@
       margin: 2rem 0;
     }
 
-    /* <div class="wrapper">
-    <header class="center">
-      <h3>
-        Contact us
-      </h3>
-    </header>
-    <div class="cardContainer">
-      <div class="card">
-        <img src="../images/1-s2.0-S0929664620300449-gr2_lrg-a.jpg" alt="Photo">
-        <p>Nisarg Jaiswal</p>
-        <div>
-          icon
-        </div>
-      </div>
-    </div>
-  </div> */
     .cardContainer {
       display: flex;
       justify-content: space-between;
@@ -285,6 +269,14 @@
       text-decoration: none;
       color: black;
     }
+	.footer {
+      width: 100%;
+      background-color: black;
+      padding: 2rem;
+      text-align: center;
+      font-size: 2rem;
+      color: white;
+    }
   </style>
   <script src="script.js" defer></script>
 </head>
@@ -305,14 +297,11 @@
           <div class="dropzone">
             <div class="icon-container">
 
-              <img src="./file.svg" class="center" draggable="false" alt="File Icon">
-              <img src="./file.svg" class="left" draggable="false" alt="File Icon">
-              <img src="./file.svg" class="right" draggable="false" alt="File Icon">
+              <img src="{{url_for('static',filename = 'file.svg')}}" class="center" draggable="false" alt="File Icon">
 
             </div>
             <div class="file-input">
 
-              <!-- <input id-"inputFile" type="file" name="file" accept="image/*" multiple> -->
               <input type="file" id="inputFile" name="file" accept="image/*" multiple>
               <div class="dropFiles">
                 Drop Your Files Here or,
@@ -332,75 +321,91 @@
   <div class="wrapper marginTop">
     <header>
       <h3 class="center">
-        What is covid19 prediction?
+        What is COVID-19?
       </h3>
     </header>
     <ul>
-      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
-        dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
-      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
-        dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
-      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
-        dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
-      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
-        dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
-      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus omnis quaerat nihil
-        dolorem non, dolor libero culpa animi accusantium accusamus quod ea.</li>
+		COVID-19 is the infectious disease caused by the most recently
+		discovered corona virus. 
+		This new virus and disease were unknown
+		before the outbreak began in Wuhan, China, in December 2019.
+		
+    </ul>
+  </div>
+  <header>
+      <h3 class="center">
+        What are the symptoms of COVID-19?
+      </h3>
+    </header>
+    <ul>The most common symptoms of COVID-19 are fever, tiredness, and
+		dry cough. Some patients may have aches and pains, nasal
+		congestion, runny nose, sore throat or diarrhea. These symptoms are
+		usually mild and begin gradually. 
     </ul>
   </div>
   <div class="wrapper">
     <header class="center">
       <h3>
-        Contact us
+        Team Members
       </h3>
     </header>
+	<!-- team members cards -->
     <div class="cardContainer">
+		<div class="card">
+		  <img  src="{{url_for('static',filename = 'mohit.jpg')}}" alt="Photo">
+		  <p>Mohit Patel</p>
+		  <div class="iconContainer">
+			<a href="https://github.com/MohitPatel1">
+			  <i class="fa fa-github" aria-hidden="true"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/mohit-patel-2729a1225/">
+			  <i class="fa fa-linkedin" aria-hidden="true"></i>
+			</a>
+			<a href="mailto:mohit.patel1966@gmail.com">
+			  <i class="fa fa-envelope-o" aria-hidden="true"></i>
+			</a>
+		  </div>
+		</div>
+	   
+
       <div class="card">
-        <img src="../images/1-s2.0-S0929664620300449-gr2_lrg-a.jpg" alt="Photo">
-        <p>Nisarg Jaiswal</p>
+        <img  src="{{url_for('static',filename = 'karan.jpg')}}" alt="Photo">
+        <p>Karan Janthe</p>
         <div class="iconContainer">
-          <a href="#">
+          <a href="https://github.com/KMJ-007">
             <i class="fa fa-github" aria-hidden="true"></i>
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/KaranJanthe/">
             <i class="fa fa-linkedin" aria-hidden="true"></i>
           </a>
-          <a href="#">
+          <a href="mailto:karanjanthe@gmail.com">
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
           </a>
         </div>
       </div>
+     
+     
       <div class="card">
-        <img src="../images/1-s2.0-S0929664620300449-gr2_lrg-a.jpg" alt="Photo">
-        <p>Nisarg Jaiswal</p>
+        <img src="{{url_for('static',filename = 'nisu.jpg')}}" alt="Photo">
+        <p>Nisrag Jaiswal</p>
         <div class="iconContainer">
-          <a href="#">
+          <a href="https://github.com/nisuJaiswal">
             <i class="fa fa-github" aria-hidden="true"></i>
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/nisarg-jaiswal-14296320b/">
             <i class="fa fa-linkedin" aria-hidden="true"></i>
           </a>
-          <a href="#">
+          <a href="mailto:nisujaiswal4@gmail.com">
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
           </a>
         </div>
       </div>
-      <div class="card">
-        <img src="../images/1-s2.0-S0929664620300449-gr2_lrg-a.jpg" alt="Photo">
-        <p>Nisarg Jaiswal</p>
-        <div class="iconContainer">
-          <a href="#">
-            <i class="fa fa-github" aria-hidden="true"></i>
-          </a>
-          <a href="#">
-            <i class="fa fa-linkedin" aria-hidden="true"></i>
-          </a>
-          <a href="#">
-            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
+     
     </div>
+  </div>
+  
+  <div class="footer">
+    Made with ❤️ by Team Mokey for INGENIUM
   </div>
 </body>
 <script>
