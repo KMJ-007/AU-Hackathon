@@ -71,6 +71,10 @@ python app.py
 - ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
   
   <!-- demo video/images of projects -->
+![](demo/Screenshot%202022-03-27%20160237.png)
+![](demo/Screenshot%202022-03-27%20160311.png)
+![](demo/Screenshot%202022-03-27%20160335.png)
+![](demo/Screenshot%202022-03-27%20160413.png)
 
   ## Team Name: Mokey
 
