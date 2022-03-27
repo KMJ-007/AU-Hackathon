@@ -200,7 +200,7 @@
       border: 1px solid black;
       background-color: var(--pColor);
       color: white;
-      margin: 0 33rem 0 0;
+      margin: 0 24rem 0 0;
     }
 
     .btnSubmit input:hover {
@@ -290,8 +290,11 @@
       background-color: black;
       padding: 2rem;
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.3rem;
       color: white;
+    }
+    #filePath{
+      margin-top:1rem;
     }
   </style>
   <script src="script.js" defer></script>
@@ -309,8 +312,7 @@
       </div>
       <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
         <div class="wrapperContainer">
-          <!-- <img src="{{url_for('static',filename = 'undraw_medicine_b-1-ol.svg')}}" alt=""> -->
-          <img src="../Static/undraw_medicine_b-1-ol.svg" alt="">
+          <img src="{{url_for('static',filename = 'undraw_medicine_b-1-ol.svg')}}" alt="">
 
           <section class="uploadContainer">
             <div class="dropzone">
@@ -323,6 +325,11 @@
                   Drop Your Files Here or,
                   <span class="browseBtn"> Browse</span>
                 </div>
+                <div class="fileDropped d-none">
+                  <p id="filePath">
+                      <span class='close'></span>
+                  </p>
+              </div>
               </div>
             </div>
           </section>

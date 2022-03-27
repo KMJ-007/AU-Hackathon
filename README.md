@@ -4,7 +4,7 @@
 ---
 
 ## about project
-
+the unbeatable problem we faced in the second wave of covid was a high amount of people rushing to test if they were covid positive or not. people had to wait for hours to get tested and shortage of COVID testing kits was an issue too. we have come up with an AI model that solves all these problems. it requires only the x-ray of the chest to find out if you are covid positive or not with 95% accuracy. if diagnosed person is affected by COVID , person will be provided with instructions on what they should do as immediate action. and for additional care link of expert guideline on covid will be given. if the person is diagnosed covid negative he will be given instruction on what they should do to remain unaffected by covid. we are planning to add feature that will suggest nearest clinic or hospital near them.
 <br/>
 
 ### What is COVID-19?
