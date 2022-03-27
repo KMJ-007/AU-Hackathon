@@ -60,6 +60,8 @@ style.js
 ```python
 python app.py
 ```
+## What challenges we faced in building project?
+- Dataset for chest x-ray's were not available, and we wanted to find the specific covid inflected chest X-ray, and Non-covid x-ray, this was the biggest challenges we had, for solution we combined different dataset for making our own dataset.
 
 ## Technologies
 - ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
