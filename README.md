@@ -3,7 +3,7 @@
 ## COVID-19 detection from X-ray scans of the chest using CNN
 ---
 
-## little about project
+## about project
 
 <br/>
 
